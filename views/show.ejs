@@ -1,0 +1,40 @@
+<%- include("header")%>
+
+  <%- include("nav")%>
+
+    <div class="show">
+      <ol class="list-group list-group-numbered container mt-5"><br>
+        <h1 class="text-light text-center mt-4">Here we show the task</h1>
+        <% if(tasks.length===0){ %>
+          <h2 class="text-danger text-center mt-5">No task available</h2>
+          <% }%>
+            <% tasks.forEach(function(task){ %>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-start mb-2 rounded-start rounded-end">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Name ---<span class="name">
+                      <%= task.name%>
+                    </span></div>
+                  <div class="fw-bold">Mobile No. --- <span class="name">
+                      <%= task.mobile%>
+                    </span></div>
+                  <div class="fw-bold">E-mail ---<span class="name">
+                      <%= task.email%>
+                    </span></div>
+                  <div class="fw-bold"> Task --- <a class="link">
+                      <%= task.taask%>
+                    </a> </div>
+                  <div class="fw-bold">Deadline ---<small class="mx-1 text-danger">
+                      <%= new Intl.DateTimeFormat('en-GB', { year: 'numeric' , month: 'long' , day: '2-digit'
+                        }).format(new Date()) %>
+                    </small></div>
+                </div>
+                <a href="/delete/<%= task.id%>">
+                  <span class="fs-5 badge rounded-pill mt-5 me-5">❎</span>
+                </a>
+              </li>
+              <% })%>
+      </ol>
+    </div>
+
+    <%- include("footer")%>

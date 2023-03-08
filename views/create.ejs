@@ -1,0 +1,16 @@
+<%- include("header")%>
+
+<%- include("nav")%>
+
+<div class="create">
+    <form  class="container w-50 mt-5 p-5 text-center" action="/add" method="post">
+        <h1 class="text-center"><span class="text-light">Here we create the user task...</span></h1>
+        <input class="form-control mb-2 py-2 fs-5" type="text" placeholder="User's Name" name="name">
+        <input class="form-control mb-2 py-2 fs-5" type="email" placeholder="E-mail id" name="email">
+        <input class="form-control mb-2 py-2 fs-5" type="tel" placeholder="Phone No." name="mobile">
+        <textarea  class="form-control mb-2 py-2 fs-5" type="text" placeholder="Type task here"  name="taask" cols="10" rows="10"></textarea>
+        <button class=" w-100 btn btn-dark">Add Task</button>
+    </form>
+</div>
+
+<%- include("footer")%>
